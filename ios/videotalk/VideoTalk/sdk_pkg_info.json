@@ -1,0 +1,27 @@
+{
+  "copy_file_dirs": [
+    {
+      "src": "release/iphoneos_simulator",
+      "dst": "libs/ZegoLiveRoom-all"
+    },
+    {
+      "src": "release/iphoneos",
+      "dst": "libs/ZegoLiveRoom-all"
+    }
+  ],
+  "sdk_name": "zegoliveroom_video_webrtc",
+  "project": "videotalk",
+  "platform": "apple",
+  "sdk_absolute_path_on_share": "smb://192.168.1.3/share/zego_sdk/zegoliveroom_release_new/zegoliveroom_180821_155100_release-new-0-gff2a8dd3_bn605_12_video/iOS/zegoliveroom_180821_155100_release-new-0-gff2a8dd3_bn605_12_video_ios.zip",
+  "sdk_absolute_path_on_share_static": "smb://192.168.1.3/share/zego_sdk/zegoliveroom_release_new/zegoliveroom_180821_155100_release-new-0-gff2a8dd3_bn605_12_video/iOS/zegoliveroom_180821_155100_release-new-0-gff2a8dd3_bn605_12_video_ios_static.zip",
+  "copy_file_dirs_static": [
+    {
+      "src": "static/iphoneos_simulator",
+      "dst": "libs/ZegoLiveRoom-all"
+    },
+    {
+      "src": "static/iphoneos",
+      "dst": "libs/ZegoLiveRoom-all"
+    }
+  ]
+}

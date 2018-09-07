@@ -1,0 +1,37 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- 水平分割线 -->
+    <style name="HorizontalDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1.5px</item>
+        <item name="android:background">@color/bg_gray</item>
+    </style>
+
+    <style name="RoundImageButtonStyle" parent="Base.Widget.AppCompat.ImageButton">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_marginLeft">6dp</item>
+        <item name="android:layout_marginRight">6dp</item>
+        <item name="android:background">@drawable/vt_bg_round_btn</item>
+    </style>
+
+    <style name="RoundTextButtonStyle" parent="RoundImageButtonStyle">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">10pt</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="LogTextButtonStyle" parent="RoundImageButtonStyle">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">5pt</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+</resources>

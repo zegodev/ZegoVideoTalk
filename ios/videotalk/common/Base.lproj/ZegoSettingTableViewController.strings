@@ -1,0 +1,123 @@
+
+/* Class = "UITabBarItem"; title = "设置"; ObjectID = "0eh-tM-OgS"; */
+"0eh-tM-OgS.title" = "设置";
+
+/* Class = "UILabel"; text = "视频参数"; ObjectID = "1G9-ZN-u5Y"; */
+"1G9-ZN-u5Y.text" = "视频参数";
+
+/* Class = "UITableViewSection"; headerTitle = "SDK VERSION"; ObjectID = "1vG-yo-SmL"; */
+"1vG-yo-SmL.headerTitle" = "SDK VERSION";
+
+/* Class = "UILabel"; text = "用户ID"; ObjectID = "2UC-bm-dWf"; */
+"2UC-bm-dWf.text" = "用户ID";
+
+/* Class = "UITextField"; placeholder = "User ID"; ObjectID = "2Vx-zZ-4lx"; */
+"2Vx-zZ-4lx.placeholder" = "User ID";
+
+/* Class = "UILabel"; text = "硬件解码"; ObjectID = "57O-Wp-jrD"; */
+"57O-Wp-jrD.text" = "硬件解码";
+
+/* Class = "UILabel"; text = "上传日志"; ObjectID = "7F5-Gq-YyT"; */
+"7F5-Gq-YyT.text" = "上传日志";
+
+/* Class = "UILabel"; text = "App 版本"; ObjectID = "98E-mZ-kja"; */
+"98E-mZ-kja.text" = "App 版本";
+
+/* Class = "UILabel"; text = "外部滤镜"; ObjectID = "9Aa-9V-pWK"; */
+"9Aa-9V-pWK.text" = "外部滤镜";
+
+/* Class = "UILabel"; text = "分辨率"; ObjectID = "A6z-Ct-eiC"; */
+"A6z-Ct-eiC.text" = "分辨率";
+
+/* Class = "UILabel"; text = "Label1"; ObjectID = "BX0-mD-qos"; */
+"BX0-mD-qos.text" = "Label1";
+
+/* Class = "UITableViewSection"; headerTitle = "TIME"; ObjectID = "Btk-uY-EHb"; */
+"Btk-uY-EHb.headerTitle" = "TIME";
+
+/* Class = "UITableViewSection"; headerTitle = "ACCOUNT"; ObjectID = "FBQ-kj-OgO"; */
+"FBQ-kj-OgO.headerTitle" = "ACCOUNT";
+
+/* Class = "UILabel"; text = "自适应码率"; ObjectID = "GNg-Xe-hIj"; */
+"GNg-Xe-hIj.text" = "自适应码率";
+
+/* Class = "UILabel"; text = "Label3"; ObjectID = "MlJ-Do-R5n"; */
+"MlJ-Do-R5n.text" = "Label3";
+
+/* Class = "UILabel"; text = "App ID"; ObjectID = "Nin-Pa-0T8"; */
+"Nin-Pa-0T8.text" = "App ID";
+
+/* Class = "UILabel"; text = "音频前处理"; ObjectID = "ORZ-w2-Yu0"; */
+"ORZ-w2-Yu0.text" = "音频前处理";
+
+/* Class = "UILabel"; text = "测试环境"; ObjectID = "Oct-Pw-n8M"; */
+"Oct-Pw-n8M.text" = "测试环境";
+
+/* Class = "UILabel"; text = "关于"; ObjectID = "Psa-Lw-DnJ"; */
+"Psa-Lw-DnJ.text" = "关于";
+
+/* Class = "UINavigationItem"; title = "ZEGO"; ObjectID = "RVe-XC-Gnc"; */
+"RVe-XC-Gnc.title" = "ZEGO";
+
+/* Class = "UILabel"; text = "码率"; ObjectID = "RYT-Eb-Qqr"; */
+"RYT-Eb-Qqr.text" = "码率";
+
+/* Class = "UITableViewSection"; headerTitle = "VIDEO"; ObjectID = "Sh8-dm-ERb"; */
+"Sh8-dm-ERb.headerTitle" = "VIDEO";
+
+/* Class = "UILabel"; text = "外部渲染"; ObjectID = "Tlt-68-vZK"; */
+"Tlt-68-vZK.text" = "外部渲染";
+
+/* Class = "UILabel"; text = "Label2"; ObjectID = "To0-ET-ilV"; */
+"To0-ET-ilV.text" = "Label2";
+
+/* Class = "UILabel"; text = "高级设置"; ObjectID = "Wbk-HU-EFM"; */
+"Wbk-HU-EFM.text" = "高级设置";
+
+/* Class = "UINavigationItem"; title = "Log"; ObjectID = "WhJ-XZ-Ci3"; */
+"WhJ-XZ-Ci3.title" = "Log";
+
+/* Class = "UITableViewSection"; headerTitle = "ENVIRONMENT"; ObjectID = "XRZ-ZU-lJI"; */
+"XRZ-ZU-lJI.headerTitle" = "ENVIRONMENT";
+
+/* Class = "UILabel"; text = "计时"; ObjectID = "aWM-zG-DNx"; */
+"aWM-zG-DNx.text" = "计时";
+
+/* Class = "UITableViewSection"; headerTitle = "ADVANCED"; ObjectID = "bES-AA-Lzq"; */
+"bES-AA-Lzq.headerTitle" = "ADVANCED";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "d9S-0v-vA0"; */
+"d9S-0v-vA0.text" = "Title";
+
+/* Class = "UITableViewSection"; headerTitle = "ABOUT"; ObjectID = "dYt-Vs-EBZ"; */
+"dYt-Vs-EBZ.headerTitle" = "ABOUT";
+
+/* Class = "UITableViewSection"; headerTitle = "VIDEO"; ObjectID = "g5U-1A-xp5"; */
+"g5U-1A-xp5.headerTitle" = "VIDEO";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "isY-v0-Yf5"; */
+"isY-v0-Yf5.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "帧率"; ObjectID = "jEF-ts-TiG"; */
+"jEF-ts-TiG.text" = "帧率";
+
+/* Class = "UILabel"; text = "硬件编码"; ObjectID = "mIO-g5-Lmy"; */
+"mIO-g5-Lmy.text" = "硬件编码";
+
+/* Class = "UILabel"; text = "App Sign"; ObjectID = "mMP-Ek-prE"; */
+"mMP-Ek-prE.text" = "App Sign";
+
+/* Class = "UITableViewSection"; headerTitle = "AUDIO"; ObjectID = "nY1-FQ-paD"; */
+"nY1-FQ-paD.headerTitle" = "AUDIO";
+
+/* Class = "UILabel"; text = "外部采集"; ObjectID = "nYE-90-sEm"; */
+"nYE-90-sEm.text" = "外部采集";
+
+/* Class = "UILabel"; text = "V1.0.0"; ObjectID = "pfX-cI-u0i"; */
+"pfX-cI-u0i.text" = "V1.0.0";
+
+/* Class = "UITextField"; placeholder = "User Name"; ObjectID = "x3V-Ku-eif"; */
+"x3V-Ku-eif.placeholder" = "User Name";
+
+/* Class = "UILabel"; text = "用户名"; ObjectID = "yxU-AX-dkX"; */
+"yxU-AX-dkX.text" = "用户名";

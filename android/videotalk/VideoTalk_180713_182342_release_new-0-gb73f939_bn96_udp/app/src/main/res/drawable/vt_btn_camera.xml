@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@mipmap/vt_btn_camera_disable" android:state_pressed="true" />
+    <item android:drawable="@mipmap/vt_btn_camera_disable" android:state_selected="true" />
+    <item android:drawable="@mipmap/vt_btn_camera" />     <!-- 此行必须写在最后，否则状态无效 -->
+</selector>

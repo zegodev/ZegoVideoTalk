@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "手电筒"; ObjectID = "9UJ-Ed-SPQ"; */
+"9UJ-Ed-SPQ.text" = "手电筒";
+
+/* Class = "UITextField"; placeholder = "给直播起个标题"; ObjectID = "g51-wa-IF0"; */
+"g51-wa-IF0.placeholder" = "给直播起个标题";
+
+/* Class = "UIButton"; normalTitle = "开始直播"; ObjectID = "ht5-zR-cQR"; */
+"ht5-zR-cQR.normalTitle" = "开始直播";
+
+/* Class = "UILabel"; text = "前置摄像头"; ObjectID = "tXf-bN-gxl"; */
+"tXf-bN-gxl.text" = "前置摄像头";

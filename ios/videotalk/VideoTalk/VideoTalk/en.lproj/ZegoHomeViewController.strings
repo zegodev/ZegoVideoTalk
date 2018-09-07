@@ -1,0 +1,7 @@
+
+/* Class = "UITextField"; placeholder = "请输入房间 ID"; ObjectID = "YqC-ZS-P6e"; */
+"YqC-ZS-P6e.placeholder" = "Please Input Room ID";
+
+/* Class = "UIButton"; normalTitle = "开始通话"; ObjectID = "vso-T0-4Lx"; */
+"vso-T0-4Lx.normalTitle" = "Start Talking";
+

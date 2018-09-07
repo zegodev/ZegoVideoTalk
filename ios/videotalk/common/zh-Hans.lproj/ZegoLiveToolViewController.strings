@@ -1,0 +1,36 @@
+
+/* Class = "UIButton"; normalTitle = "发送"; ObjectID = "5Xx-yn-OdB"; */
+"5Xx-yn-OdB.normalTitle" = "发送";
+
+/* Class = "UIButton"; normalTitle = "请求连麦"; ObjectID = "95c-Y6-oaP"; */
+"95c-Y6-oaP.normalTitle" = "请求连麦";
+
+/* Class = "UILabel"; text = "10:09:00:123"; ObjectID = "Gys-h3-uE4"; */
+"Gys-h3-uE4.text" = "10:09:00:123";
+
+/* Class = "UIButton"; normalTitle = "日志"; ObjectID = "LfI-pP-5qG"; */
+"LfI-pP-5qG.normalTitle" = "日志";
+
+/* Class = "UIButton"; normalTitle = "静音"; ObjectID = "NhQ-hU-wi0"; */
+"NhQ-hU-wi0.normalTitle" = "静音";
+
+/* Class = "UIButton"; normalTitle = "进入全屏"; ObjectID = "TqL-lz-9Ej"; */
+"TqL-lz-9Ej.normalTitle" = "进入全屏";
+
+/* Class = "UIButton"; normalTitle = "直播设置"; ObjectID = "Uju-2q-kYM"; */
+"Uju-2q-kYM.normalTitle" = "直播设置";
+
+/* Class = "UIButton"; normalTitle = "停止直播"; ObjectID = "WSo-ON-G0N"; */
+"WSo-ON-G0N.normalTitle" = "停止直播";
+
+/* Class = "UILabel"; text = "Render"; ObjectID = "gqr-yU-6F2"; */
+"gqr-yU-6F2.text" = "Render";
+
+/* Class = "UIButton"; normalTitle = "直播设置"; ObjectID = "iOH-bc-uHY"; */
+"iOH-bc-uHY.normalTitle" = "直播设置";
+
+/* Class = "UIButton"; normalTitle = "静音"; ObjectID = "oEl-lJ-gHw"; */
+"oEl-lJ-gHw.normalTitle" = "静音";
+
+/* Class = "UIButton"; normalTitle = "日志"; ObjectID = "sr3-Nu-GZK"; */
+"sr3-Nu-GZK.normalTitle" = "日志";

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.zego.videotalk.ui.activities.VideoTalkActivity">
+
+    <com.zego.videotalk.ui.widgets.VideoLiveView
+        android:id="@+id/vt_big_video_window"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:isBigView="true">
+
+
+    </com.zego.videotalk.ui.widgets.VideoLiveView>
+    <RelativeLayout
+        android:id="@+id/vt_toolbar_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:padding="6dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true">
+
+            <ImageButton
+                android:id="@+id/vt_btn_camera"
+                style="@style/RoundImageButtonStyle"
+                android:src="@drawable/vt_btn_camera" />
+
+            <ImageButton
+                android:id="@+id/vt_btn_mic"
+                style="@style/RoundImageButtonStyle"
+                android:src="@drawable/vt_btn_mic" />
+
+            <ImageButton
+                android:id="@+id/vt_btn_speaker"
+                style="@style/RoundImageButtonStyle"
+                android:src="@drawable/vt_btn_speaker" />
+
+            <ImageButton
+                android:id="@+id/vt_btn_front_camera"
+                style="@style/RoundImageButtonStyle"
+                android:src="@mipmap/vt_btn_front_camera" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true">
+
+            <Button
+                android:id="@+id/vt_btn_show_log"
+                style="@style/LogTextButtonStyle"
+                android:text="@string/log" />
+
+            <ImageButton
+                android:id="@+id/vt_btn_close"
+                style="@style/RoundImageButtonStyle"
+                android:src="@mipmap/vt_btn_close" />
+        </LinearLayout>
+    </RelativeLayout>
+    <GridView
+        android:id="@+id/vt_normal_video_window_set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginBottom="6dp"
+        android:layout_alignParentBottom="true"
+        android:columnWidth="@dimen/vt_video_live_item_width"
+        android:numColumns="auto_fit"
+        android:stretchMode="columnWidth">
+
+    </GridView>
+
+</RelativeLayout>

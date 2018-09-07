@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <TextureView
+        android:id="@+id/textureView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rlyt_quality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_quality_color"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_centerVertical="true"
+                tools:background="@drawable/vt_shape_green_circle"
+                />
+
+            <TextView
+                android:id="@+id/tv_live_quality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:textColor="#ffffff"
+                android:textSize="13.3sp"
+                tools:text="当前质量"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/vt_bg_btn_selector"
+            android:textSize="16sp"
+            android:text="@string/vt_btn_share"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_alignTop="@id/rlyt_quality"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:id="@+id/tv_switch_full_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/vt_bg_btn_selector"
+            android:textSize="16sp"
+            android:text="@string/vt_btn_fullscreen"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_below="@id/tv_share"
+            android:layout_marginTop="5dp"
+            android:visibility="invisible"
+            />
+    </RelativeLayout>
+</RelativeLayout>
