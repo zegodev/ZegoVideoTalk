@@ -1,0 +1,76 @@
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
+    <string name="vt_app_name">VideoTalk</string>
+    <string name="vt_menu_action_setting">设置</string>
+    <string name="vt_menu_action_clean">清除</string>
+    <string name="vt_title_activity_settings">设置</string>
+    <string name="vt_title_activity_log">日志</string>
+    <string name="vt_title_activity_talk">视频通话</string>
+    <string name="vt_toast_init_sdk_failed">初始化 SDK 失败</string>
+    <string name="vt_hint_input_session_id">任意输入相同的房间号即可通话</string>
+    <string name="vt_input_session_id_no_allow_contain_white_space">会话ID不允许包含空格</string>
+    <string name="vt_btn_start_session">开始视频通话</string>
+    <string name="vt_toast_permission_denied">获取权限 %1$s 失败</string>
+    <string name="vt_toast_login_failed">登录房间失败，错误码：%1$d</string>
+    <string name="vt_dialog_logout_title">退出视频会话</string>
+    <string name="vt_dialog_logout_message">您现在正在通话中，确认离开？</string>
+    <string name="vt_dialog_btn_positive">离开</string>
+    <string name="vt_dialog_btn_cancel">取消</string>
+    <string name="vt_btn_share">分享</string>
+    <string name="vt_btn_fullscreen">全屏</string>
+    <string name="vt_btn_exit_fullscreen">退出全屏</string>
+    <string name="vt_live_quality">当前质量:&#160;<xliff:g id="value">%1$s</xliff:g></string>
+    <string name="vt_live_quality_fps_and_bitrate">&#160;帧率:<xliff:g id="fps">%1$.2f</xliff:g>;&#160;比特率:<xliff:g id="bitrate">%2$.2f</xliff:g>Kb/s;&#160;延时:<xliff:g id="rtt">%3$s</xliff:g>ms;&#160;丢包率:<xliff:g id="pktlostrate">%4$s</xliff:g>%%</string>
+    <string name="vt_hint_none_data">无数据</string>
+
+    <string name="vt_live_quality_excellent">优</string>
+    <string name="vt_live_quality_good">良</string>
+    <string name="vt_live_quality_medium">中</string>
+    <string name="vt_live_quality_bad">差</string>
+
+    <string name="zg_text_sdk_version">SDK版本号: </string>
+    <string name="zg_text_ve_version">VE版本号: </string>
+    <string name="zg_text_demo_version">Demo版本: </string>
+    <string name="demo_version">版本:&#160;</string>
+
+    <string name="zg_text_sdk_test">测试环境: </string>
+    <string name="zg_text_app_flavor">App版本</string>
+    <string name="zg_text_app_id">应用 Id: </string>
+    <string name="zg_text_app_key">应用签名: </string>
+    <string name="zg_text_user_id">用户 Id: </string>
+    <string name="zg_text_user_name">用户名: </string>
+    <string name="zg_text_app_flavor_china">国内版</string>
+    <string name="zg_text_app_flavor_intl">国际版</string>
+    <string name="zg_text_app_flavor_web">WebRtc</string>
+    <string name="zg_text_app_flavor_customize">自定义</string>
+
+    <string name="zg_text_quality_options">直播品质:</string>
+    <string name="zg_text_layered_coding">分层编码:</string>
+    <string name="zg_text_video_codec_default">DEFAULT</string>
+    <string name="zg_text_video_codec_multilayer">MULTILAYER</string>
+    <string name="zg_text_resolution_type_lowest">超低质量</string>
+    <string name="zg_text_resolution_type_Low">低质量</string>
+    <string name="zg_text_resolution_type_Standard">标准质量</string>
+    <string name="zg_text_resolution_type_High">高质量</string>
+    <string name="zg_text_resolution_type_Higher">超高质量</string>
+    <string name="zg_text_resolution_type_Highest">特高质量</string>
+    <string name="zg_text_resolution_type_Customize">自定义</string>
+
+    <string name="zg_checkbox_use_hardware_encode">硬件编码</string>
+    <string name="zg_checkbox_use_hardware_decode">硬件解码</string>
+
+    <string name="resolution_prefix">分辨率&#160;<xliff:g id="value">%1$s</xliff:g></string>
+    <string name="fps_prefix">帧率&#160;<xliff:g id="value">%1$s</xliff:g></string>
+    <string name="bitrate_prefix">码率&#160;<xliff:g id="value">%1$s</xliff:g></string>
+
+    <string name="zg_toast_username_format_error">用户名格式不合法</string>
+    <string name="zg_toast_user_id_format_error">用户ID格式不合法</string>
+    <string name="zg_toast_app_id_format_error">应用 ID 格式不合法</string>
+    <string name="zg_toast_app_sign_key_format_error">应用App sign 签名不合法</string>
+    <string name="zg_update_log">上传日志</string>
+    <string name="zg_update_log_success">日志上传成功</string>
+    <string name="zg_toast_reinit_sdk_success">初始化成功</string>
+    <string name="share_log">分享日志</string>
+    <string name="back">返回</string>
+    <string name="log">日志</string>
+    <string name="share">分享</string>
+</resources>

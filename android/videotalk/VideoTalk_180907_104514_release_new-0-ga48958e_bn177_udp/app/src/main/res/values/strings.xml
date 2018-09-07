@@ -1,0 +1,79 @@
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
+    <string name="vt_app_name">VideoTalk</string>
+    <string name="vt_menu_action_setting">Setting</string>
+    <string name="vt_menu_action_clean">Clean</string>
+    <string name="vt_title_activity_settings">Settings</string>
+    <string name="vt_title_activity_log">ShowLog</string>
+    <string name="vt_title_activity_talk">VideoTalking</string>
+    <string name="vt_toast_init_sdk_failed">Initialize ZegoLiveRoom failed</string>
+    <string name="vt_hint_input_session_id">Enter the roomID to join the chat</string>
+    <string name="vt_input_session_id_no_allow_contain_white_space">Enter the Session Id no Allow Contain White Space</string>
+    <string name="vt_btn_start_session">Start Talking</string>
+    <string name="vt_toast_permission_denied">Can\'t get permission: %1$s</string>
+    <string name="vt_toast_login_failed">Login Room failed，Error：%1$d</string>
+    <string name="vt_dialog_logout_title">Logout Room</string>
+    <string name="vt_dialog_logout_message">Do you really leave the video room?</string>
+    <string name="vt_dialog_btn_positive">Yes</string>
+    <string name="vt_dialog_btn_cancel">Cancel</string>
+    <string name="vt_btn_share">Share</string>
+    <string name="vt_btn_fullscreen">FullScreen</string>
+    <string name="vt_btn_exit_fullscreen">Exit</string>
+    <string name="vt_live_quality">Quality:&#160;<xliff:g id="value">%1$s</xliff:g></string>
+    <string name="vt_live_quality_fps_and_bitrate">&#160;FPS:<xliff:g id="fps">%1$.2f</xliff:g>;&#160;Bitrate:<xliff:g id="bitrate">%2$.2f</xliff:g>Kb/s;&#160;delayed:<xliff:g id="rtt">%3$s</xliff:g>ms;&#160;Packet loss:<xliff:g id="pktlostrate">%4$s</xliff:g>%%</string>
+    <string name="vt_hint_none_data">No Data</string>
+
+    <string name="zg_text_sdk_test">Test Environment</string>
+
+    <string name="vt_live_quality_excellent">Excellent</string>
+    <string name="vt_live_quality_good">Good</string>
+    <string name="vt_live_quality_medium">Medium</string>
+    <string name="vt_live_quality_bad">Bad</string>
+
+    <string name="zg_text_sdk_version">SDK Version: </string>
+    <string name="zg_text_ve_version">VE Version: </string>
+    <string name="zg_text_demo_version">Demo Version: </string>
+    <string name="demo_version">Version:&#160;</string>
+    <string name="zg_text_app_flavor">App Flavor</string>
+    <string name="zg_text_app_id">Application Id: </string>
+    <string name="zg_text_app_key">Sign Key: </string>
+    <string name="zg_text_user_id">User ID: </string>
+    <string name="zg_text_user_name">UserName: </string>
+    <string name="zg_text_app_flavor_china">China</string>
+    <string name="zg_text_app_flavor_intl">International</string>
+    <string name="zg_text_app_flavor_web">WebRtc</string>
+    <string name="zg_text_app_flavor_customize">Custom</string>
+
+    <string name="zg_text_quality_options">Quality Options:</string>
+    <string name="zg_text_layered_coding">Layered coding:</string>
+    <string name="zg_text_video_codec_default">DEFAULT</string>
+    <string name="zg_text_video_codec_multilayer">MULTILAYER</string>
+    <string name="zg_text_resolution_type_lowest">Lowest</string>
+    <string name="zg_text_resolution_type_Low">Low</string>
+    <string name="zg_text_resolution_type_Standard">Standard</string>
+    <string name="zg_text_resolution_type_High">High</string>
+    <string name="zg_text_resolution_type_Higher">Higher</string>
+    <string name="zg_text_resolution_type_Highest">Highest</string>
+    <string name="zg_text_resolution_type_Customize">Customize</string>
+
+    <string name="zg_checkbox_use_hardware_encode">Hardware Encode</string>
+    <string name="zg_checkbox_use_hardware_decode">Hardware Decode</string>
+
+    <string name="resolution_prefix">Resolution&#160;<xliff:g id="value">%1$s</xliff:g></string>
+    <string name="fps_prefix">Frame Rate&#160;<xliff:g id="value">%1$s</xliff:g></string>
+    <string name="bitrate_prefix">Bit Rate&#160;<xliff:g id="value">%1$s</xliff:g></string>
+    <string name="zg_toast_user_id_format_error">User id formatter error</string>
+    <string name="zg_toast_username_format_error">User name formatter error</string>
+    <string name="zg_toast_app_id_format_error">App ID formatter error</string>
+    <string name="zg_toast_app_sign_key_format_error">App sign key formatter error</string>
+
+    <string name="zg_toast_reinit_sdk_success">ReInit Success</string>
+
+    <string name="zg_update_log">Update log</string>
+    <string name="zg_update_log_success">Update log success</string>
+    <string name="share_log">Share Log</string>
+    <string name="log">log</string>
+    <string name="back">back</string>
+    <string name="share">share</string>
+
+
+</resources>
