@@ -35,7 +35,6 @@ typedef NS_ENUM(NSUInteger, ZegoAppType)
 {
     ZegoAppTypeUDP  = 0,        // 国内版
     ZegoAppTypeI18N,            // 国际版
-    ZegoAppTypeRTC,             // WebRTC
     ZegoAppTypeCustom,          // 自定义，App ID 由用户自定义
 };
 
@@ -50,6 +49,7 @@ typedef NS_ENUM(NSUInteger, ZegoAppType)
 
 @property (nonatomic, assign) BOOL useTestEnv;                      // 是否使用测试环境
 @property (nonatomic, assign) BOOL useAlphaEnv;                     // 是否使用 alpha 环境
+@property (nonatomic, assign) int bizTypeForCustomAppID;
 
 // 用户设置
 @property (nonatomic, copy) NSString *userID;                       // 用户 ID

@@ -37,6 +37,9 @@ NSString *kZegoDemoVideoCodecTypeKey    = @"video_codec_type";
 NSString *kZegoDemoHardwareEncode       = @"hardware_encode";
 NSString *kZegoDemoHardwareDecode       = @"hardware_decode";
 
+NSString *kZegoDemoAppBizTypeKey        = @"biztype";
+NSString *kZegoDemoTestEnvKey           = @"test-env";
+
 @interface ZegoSetting ()
 
 @property (nonatomic, strong) id<ZegoVideoFilterFactory> filterFactory;
@@ -79,13 +82,22 @@ static ZegoSetting *_settingInstance;
 
 #pragma mark - Access method
 
+- (BOOL)useTestEnv {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:kZegoDemoTestEnvKey];
+}
+
 - (void)setUseTestEnv:(BOOL)useTestEnv {
-    if (_useTestEnv != useTestEnv) {
-        [ZegoManager releaseApi];
-    }
-    
-    _useTestEnv = useTestEnv;
+    [ZegoManager releaseApi];
+    [[NSUserDefaults standardUserDefaults] setBool:useTestEnv forKey:kZegoDemoTestEnvKey];
     [ZegoLiveRoomApi setUseTestEnv:useTestEnv];
+}
+
+- (void)setBizTypeForCustomAppID:(int)bizType {
+    [[NSUserDefaults standardUserDefaults] setInteger:bizType forKey:kZegoDemoAppBizTypeKey];
+}
+
+- (int)bizTypeForCustomAppID {
+    return (int)[[NSUserDefaults standardUserDefaults] integerForKey:kZegoDemoAppBizTypeKey];
 }
 
 #pragma mark -- UserID / UserName
@@ -165,26 +177,22 @@ static ZegoSetting *_settingInstance;
 
 #pragma mark -- AppType / AppID / AppSign
 
-//- (ZegoAppType)appType {
-//    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-//    NSUInteger type = [ud integerForKey:kZegoDemoAppTypeKey];
-//    return (ZegoAppType)type;
-//}
+- (ZegoAppType)appType {
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    NSUInteger type = [ud integerForKey:kZegoDemoAppTypeKey];
+    return (ZegoAppType)type;
+}
 
 - (void)setAppType:(ZegoAppType)type {
-    if (_appType != type) {
-        _appType = type;
-        
-        // 本地持久化
-        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-        [ud setInteger:type forKey:kZegoDemoAppTypeKey];
-        
-        [ZegoManager releaseApi];
-        
-        // 临时兼容 SDK 的 Bug，立即初始化 api 对象
-        if ([ZegoManager api] == nil) {
-            [ZegoManager api];
-        }
+    // 本地持久化
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setInteger:type forKey:kZegoDemoAppTypeKey];
+    
+    [ZegoManager releaseApi];
+    
+    // 临时兼容 SDK 的 Bug，立即初始化 api 对象
+    if ([ZegoManager api] == nil) {
+        [ZegoManager api];
     }
 }
 
@@ -209,9 +217,7 @@ static ZegoSetting *_settingInstance;
         case ZegoAppTypeUDP:
             return ;  // UDP版
         case ZegoAppTypeI18N:
-            return 100;  // 国际版
-        case ZegoAppTypeRTC:
-            return 1000;
+            return ;  // 国际版
     }
 }
 
@@ -230,12 +236,7 @@ static ZegoSetting *_settingInstance;
         }
         case ZegoAppTypeI18N:
         {
-            Byte signkey[] = {0x00};
-            return [NSData dataWithBytes:signkey length:32];
-        }
-        case ZegoAppTypeRTC:
-        {
-            Byte signkey[] = {0x00};
+            Byte signkey[] = ;
             return [NSData dataWithBytes:signkey length:32];
         }
         case ZegoAppTypeCustom:
@@ -268,7 +269,6 @@ static ZegoSetting *_settingInstance;
 - (NSArray *)appTypeList {
     return @[NSLocalizedString(@"国内版", nil),
              NSLocalizedString(@"国际版", nil),
-             NSLocalizedString(@"WebRTC", nil),
              NSLocalizedString(@"自定义", nil)];
 }
 

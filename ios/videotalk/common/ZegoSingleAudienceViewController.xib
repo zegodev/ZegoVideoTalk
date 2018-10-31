@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZegoSingleAudienceViewController">
+            <connections>
+                <outlet property="playViewContainer" destination="I6z-R0-1gK" id="5zY-Px-Ly7"/>
+                <outlet property="toolView" destination="ECl-HS-d9X" id="7I9-ac-7NE"/>
+                <outlet property="view" destination="gPN-hr-Q9s" id="3FY-oQ-Hrt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="gPN-hr-Q9s">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I6z-R0-1gK">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ECl-HS-d9X" userLabel="Tool View">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="I6z-R0-1gK" firstAttribute="leading" secondItem="gPN-hr-Q9s" secondAttribute="leading" id="4jA-E3-B0u"/>
+                <constraint firstItem="ECl-HS-d9X" firstAttribute="top" secondItem="gPN-hr-Q9s" secondAttribute="top" id="Jqo-Td-Mc9"/>
+                <constraint firstAttribute="trailing" secondItem="I6z-R0-1gK" secondAttribute="trailing" id="Lwm-8W-Qfh"/>
+                <constraint firstItem="ECl-HS-d9X" firstAttribute="trailing" secondItem="zYk-n5-RCc" secondAttribute="trailing" id="QJt-sL-sz4"/>
+                <constraint firstItem="ECl-HS-d9X" firstAttribute="leading" secondItem="zYk-n5-RCc" secondAttribute="leading" id="Tql-wq-N4a"/>
+                <constraint firstItem="I6z-R0-1gK" firstAttribute="bottom" secondItem="zYk-n5-RCc" secondAttribute="bottom" id="iN8-Wk-BLs"/>
+                <constraint firstItem="ECl-HS-d9X" firstAttribute="bottom" secondItem="zYk-n5-RCc" secondAttribute="bottom" id="w2B-os-yb5"/>
+                <constraint firstItem="I6z-R0-1gK" firstAttribute="top" secondItem="gPN-hr-Q9s" secondAttribute="top" id="x4O-6d-Rc6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="zYk-n5-RCc"/>
+        </view>
+    </objects>
+</document>

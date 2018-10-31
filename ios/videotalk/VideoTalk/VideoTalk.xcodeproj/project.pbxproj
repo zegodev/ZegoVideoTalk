@@ -47,6 +47,7 @@
 		16B39E061FE7653E001B644C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16B39E051FE7653E001B644C /* SystemConfiguration.framework */; };
 		16B39E081FE7654F001B644C /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16B39E071FE7654F001B644C /* VideoToolbox.framework */; };
 		16B67EAE1FA2177000E365E3 /* ZegoTalkToolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16B67EB01FA2177000E365E3 /* ZegoTalkToolViewController.xib */; };
+		A731AA622142463300661DB7 /* QRCodeReaderViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A731AA612142463300661DB7 /* QRCodeReaderViewController.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -128,6 +129,7 @@
 		16B67EAF1FA2177000E365E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ZegoTalkToolViewController.xib; sourceTree = "<group>"; };
 		16B67EB21FA2177400E365E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ZegoTalkToolViewController.strings; sourceTree = "<group>"; };
 		16B67EB41FA2177500E365E3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ZegoTalkToolViewController.strings"; sourceTree = "<group>"; };
+		A731AA612142463300661DB7 /* QRCodeReaderViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QRCodeReaderViewController.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				16B39E061FE7653E001B644C /* SystemConfiguration.framework in Frameworks */,
 				164C75A0211853340012FB01 /* PgyUpdate.framework in Frameworks */,
 				16B39E041FE76535001B644C /* Security.framework in Frameworks */,
+				A731AA622142463300661DB7 /* QRCodeReaderViewController.framework in Frameworks */,
 				16920AE21FECF83D00E5E689 /* ZegoLiveRoom.framework in Frameworks */,
 				16B39E021FE7652C001B644C /* libz.tbd in Frameworks */,
 				16B39E001FE76525001B644C /* libstdc++.tbd in Frameworks */,
@@ -160,6 +163,7 @@
 		161E2DA01FE7631C00C52B1B /* thirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				A731AA612142463300661DB7 /* QRCodeReaderViewController.framework */,
 				164C759D211853330012FB01 /* PgySDK.framework */,
 				164C759E211853340012FB01 /* PgyUpdate.framework */,
 				161E2DA11FE7631C00C52B1B /* Bugly.framework */,

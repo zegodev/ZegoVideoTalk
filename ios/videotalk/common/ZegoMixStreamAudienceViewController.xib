@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZegoMixStreamAudienceViewController">
+            <connections>
+                <outlet property="playViewContainer" destination="Ib0-3r-Ilm" id="uXv-eg-JQB"/>
+                <outlet property="toolView" destination="WKE-N5-ROD" id="WZQ-oI-7rU"/>
+                <outlet property="view" destination="ZeC-NL-bLZ" id="F0f-Kc-2lM"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="ZeC-NL-bLZ">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ib0-3r-Ilm">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WKE-N5-ROD" userLabel="Tool View">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="WKE-N5-ROD" firstAttribute="leading" secondItem="mb8-hb-Hdh" secondAttribute="leading" id="0Vq-gA-pqW"/>
+                <constraint firstItem="WKE-N5-ROD" firstAttribute="trailing" secondItem="mb8-hb-Hdh" secondAttribute="trailing" id="5xC-Po-GSk"/>
+                <constraint firstItem="Ib0-3r-Ilm" firstAttribute="top" secondItem="ZeC-NL-bLZ" secondAttribute="top" id="7bl-Xa-1bG"/>
+                <constraint firstItem="Ib0-3r-Ilm" firstAttribute="bottom" secondItem="mb8-hb-Hdh" secondAttribute="bottom" id="KeM-PA-7jt"/>
+                <constraint firstItem="WKE-N5-ROD" firstAttribute="top" secondItem="ZeC-NL-bLZ" secondAttribute="top" id="QU2-SH-CZQ"/>
+                <constraint firstAttribute="trailing" secondItem="Ib0-3r-Ilm" secondAttribute="trailing" id="eqh-tJ-Ev5"/>
+                <constraint firstItem="WKE-N5-ROD" firstAttribute="bottom" secondItem="mb8-hb-Hdh" secondAttribute="bottom" id="t8S-Xr-Gkr"/>
+                <constraint firstItem="Ib0-3r-Ilm" firstAttribute="leading" secondItem="ZeC-NL-bLZ" secondAttribute="leading" id="ttZ-h6-WS4"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="mb8-hb-Hdh"/>
+        </view>
+    </objects>
+</document>

@@ -557,8 +557,8 @@
     if (streamID.length == 0)
         return nil;
     
-    NSString *qualityString = [NSString stringWithFormat:NSLocalizedString(@"[%@] 帧率: %.2f, 视频码率: %.2fkb/s, 延时: %dms, 丢包率: %.2f%%", nil), publish ? NSLocalizedString(@"推流", nil): NSLocalizedString(@"拉流", nil), fps, kbs, rtt, pktLostRate/256.0];
-    NSString *totalString =[NSString stringWithFormat:NSLocalizedString(@"[%@] 流ID: %@, 帧率: %.2f, 视频码率: %.2f kb/s, 延时: %dms, 丢包率: %.2f%%", nil), publish ? NSLocalizedString(@"推流", nil): NSLocalizedString(@"拉流", nil), streamID, fps, kbs, rtt, pktLostRate/256.0];
+    NSString *qualityString = [NSString stringWithFormat:NSLocalizedString(@"[%@] 帧率: %.2f, 视频码率: %.2fkb/s, 延时: %dms, 丢包率: %.2f%%", nil), publish ? NSLocalizedString(@"推流", nil): NSLocalizedString(@"拉流", nil), fps, kbs, rtt, pktLostRate*100/256.0];
+    NSString *totalString =[NSString stringWithFormat:NSLocalizedString(@"[%@] 流ID: %@, 帧率: %.2f, 视频码率: %.2f kb/s, 延时: %dms, 丢包率: %.2f%%", nil), publish ? NSLocalizedString(@"推流", nil): NSLocalizedString(@"拉流", nil), streamID, fps, kbs, rtt, pktLostRate*100/256.0];
     [self.staticsArray insertObject:totalString atIndex:0];
     
     // 通知 log 界面更新
@@ -636,8 +636,11 @@
     }
     else if(AVAudioSessionInterruptionTypeEnded == [notification.userInfo[AVAudioSessionInterruptionTypeKey] intValue])
     {
-        // 恢复音频设备
-        [[ZegoManager api] resumeModule:ZEGOAPI_MODULE_AUDIO];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            // 延迟2s恢复音频设备，原因为系统可能在通话恢复后未完全释放设备，导致立即释放后推拉流不能重新恢复
+            [[ZegoManager api] resumeModule:ZEGOAPI_MODULE_AUDIO];
+        });
     }
 }
 

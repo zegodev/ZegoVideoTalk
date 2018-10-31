@@ -18,15 +18,22 @@ static ZegoLiveRoomApi *_apiInstance = nil;
         
 #ifdef VIDEOTALK
         // 业务类型为：实时音视频类型
-        if ([ZegoSetting sharedInstance].appType == ZegoAppTypeRTC)
+        /*if ([ZegoSetting sharedInstance].appType == ZegoAppTypeCustom) {
+            [ZegoLiveRoomApi setBusinessType:[ZegoSetting sharedInstance].bizTypeForCustomAppID];
+        } else if ([ZegoSetting sharedInstance].appType == ZegoAppTypeRTC) {
             [ZegoLiveRoomApi setBusinessType: 0];
-        else
+        } else {
             [ZegoLiveRoomApi setBusinessType: 2];
+        }*/
         
         if ([[ZegoSetting iOSDeviceType] isEqualToString:IPAD_PRO_129_2ND]) {
             [ZegoLiveRoomApi setAudioDeviceMode:ZEGOAPI_AUDIO_DEVICE_MODE_GENERAL]; // 关闭系统回声消除
+        } else {
+            // 实时音视频通信场景，使用通话模式
+            [ZegoLiveRoomApi setAudioDeviceMode:ZEGOAPI_AUDIO_DEVICE_MODE_COMMUNICATION];
         }
 #endif
+        
         
         // 测试环境
         [ZegoLiveRoomApi setUseTestEnv:[ZegoSetting sharedInstance].useTestEnv];
@@ -72,11 +79,11 @@ static ZegoLiveRoomApi *_apiInstance = nil;
         
 #ifdef VIDEOTALK
 //        [_apiInstance setLatencyMode:ZEGOAPI_LATENCY_MODE_LOW3];
-        if ([ZegoSetting sharedInstance].appType == ZegoAppTypeRTC) {
+        /*if ([ZegoSetting sharedInstance].appType == ZegoAppTypeRTC) {
             [_apiInstance setLatencyMode:ZEGOAPI_LATENCY_MODE_LOW3];
-        } else {
+        } else {*/
             [_apiInstance setLatencyMode:ZEGOAPI_LATENCY_MODE_LOW];
-        }
+        //}
         
         if ([[ZegoSetting iOSDeviceType] isEqualToString:IPAD_PRO_129_2ND]) {
             [_apiInstance enableAEC:YES]; // 开启软件回声消除

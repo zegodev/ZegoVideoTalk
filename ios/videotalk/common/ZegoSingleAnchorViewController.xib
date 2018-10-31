@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZegoSingleAnchorViewController">
+            <connections>
+                <outlet property="playViewContainer" destination="C9z-kd-hWl" id="0uA-h8-1uy"/>
+                <outlet property="toolView" destination="ny3-KT-Uw3" id="GTp-lJ-CWM"/>
+                <outlet property="view" destination="gJB-zn-t8m" id="ZgM-tE-wik"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="gJB-zn-t8m">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C9z-kd-hWl" userLabel="Play View Container">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ny3-KT-Uw3">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ny3-KT-Uw3" firstAttribute="bottom" secondItem="Prz-nh-BRh" secondAttribute="bottom" id="95R-O3-yH1"/>
+                <constraint firstItem="ny3-KT-Uw3" firstAttribute="leading" secondItem="Prz-nh-BRh" secondAttribute="leading" id="RIJ-Pm-cMQ"/>
+                <constraint firstAttribute="trailing" secondItem="C9z-kd-hWl" secondAttribute="trailing" id="SPp-k7-5zq"/>
+                <constraint firstItem="ny3-KT-Uw3" firstAttribute="trailing" secondItem="Prz-nh-BRh" secondAttribute="trailing" id="Xzk-Pc-kTF"/>
+                <constraint firstItem="C9z-kd-hWl" firstAttribute="top" secondItem="gJB-zn-t8m" secondAttribute="top" id="dCf-4F-nj3"/>
+                <constraint firstItem="C9z-kd-hWl" firstAttribute="bottom" secondItem="Prz-nh-BRh" secondAttribute="bottom" id="h6W-Fa-uPS"/>
+                <constraint firstItem="ny3-KT-Uw3" firstAttribute="top" secondItem="gJB-zn-t8m" secondAttribute="top" id="rGG-B7-CuK"/>
+                <constraint firstItem="C9z-kd-hWl" firstAttribute="leading" secondItem="gJB-zn-t8m" secondAttribute="leading" id="tiV-aJ-M31"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Prz-nh-BRh"/>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

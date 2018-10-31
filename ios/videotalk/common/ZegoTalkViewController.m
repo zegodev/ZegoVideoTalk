@@ -105,7 +105,7 @@
         NSString *logString = [NSString stringWithFormat:NSLocalizedString(@"开始登录房间", nil)];
         [self addLogString:logString];
         
-        [[ZegoManager api] loginRoom:self.roomID role:ZEGO_AUDIENCE withCompletionBlock:^(int errorCode, NSArray<ZegoStream *> *streamList) {
+        bool logining = [[ZegoManager api] loginRoom:self.roomID role:ZEGO_AUDIENCE withCompletionBlock:^(int errorCode, NSArray<ZegoStream *> *streamList) {
             NSLog(@"%s, error: %d", __func__, errorCode);
             if (errorCode == 0) {
                 NSString *logString = [NSString stringWithFormat:NSLocalizedString(@"登录房间成功. roomID: %@", nil), self.roomID];
@@ -116,9 +116,6 @@
                 if (streamList.count) {
                     [self onStreamUpdateForAdd:streamList]; // 登录成功即拉流
                 }
-                
-                [self doPublish];   // 登录成功即推流
- 
             } else {
                 NSString *logString = [NSString stringWithFormat:NSLocalizedString(@"登录房间失败. error: %d", nil), errorCode];
                 [self addLogString:logString];
@@ -126,6 +123,13 @@
                 self.isLoginSucceed = NO;
             }
         }];
+        
+        if (logining) {
+            // 调用 loginRoom 接口后立即推流，加快推流速度
+            [self doPublish];
+        } else {
+            [self addLogString:[NSString stringWithFormat:@"登录房间 %@ 失败", self.roomID]];
+        }
     }
 }
 
@@ -196,7 +200,9 @@
     self.viewContainersDict[streamID] = bigView;
     bool ret = [[ZegoManager api] startPlayingStream:streamID inView:bigView];
     [[ZegoManager api] setViewMode:ZegoVideoViewModeScaleAspectFill ofStream:streamID];
-    [[ZegoManager api] activateVedioPlayStream:streamID active:YES videoLayer:VideoStreamLayer_Auto];
+    [[ZegoManager api] activateVideoPlayStream:streamID active:YES videoLayer:VideoStreamLayer_Auto];
+
+
     assert(ret);
 }
 
@@ -450,17 +456,6 @@
         //记录当前的发布信息
         self.isPublishing = YES;
         self.publishStreamID = streamID;
-        
-        NSString *sharedHls = [info[kZegoHlsUrlListKey] firstObject];
-        NSString *sharedRtmp = [info[kZegoRtmpUrlListKey] firstObject];
-        
-        if (sharedHls.length > 0 && sharedRtmp.length > 0)
-        {
-            NSDictionary *dict = @{kFirstAnchor: @(NO), kHlsKey: sharedHls, kRtmpKey: sharedRtmp};
-            NSString *jsonString = [self encodeDictionaryToJSON:dict];
-            if (jsonString)
-                [[ZegoManager api] updateStreamExtraInfo:jsonString];
-        }
     }
     else
     {

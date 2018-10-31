@@ -139,3 +139,7 @@
 
 /* Class = "UILabel"; text = "硬件解码"; ObjectID = "yrui-Ck-azD"; */
 "rui-Ck-azD.text" = "硬件解码";
+
+"B2e-kA-qRo.headerTitle" = "Quick Setup";
+"K3Q-7y-3cN.text" = "扫码设置";
+"zQj-Qe-OUD.text" = "通过扫描二维码快速完成设置"
