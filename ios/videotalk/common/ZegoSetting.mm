@@ -217,7 +217,7 @@ static ZegoSetting *_settingInstance;
         case ZegoAppTypeUDP:
             return ;  // UDP版
         case ZegoAppTypeI18N:
-            return ;  // 国际版
+            return 100;  // 国际版
     }
 }
 
@@ -236,7 +236,7 @@ static ZegoSetting *_settingInstance;
         }
         case ZegoAppTypeI18N:
         {
-            Byte signkey[] = ;
+            Byte signkey[] = {0x00};
             return [NSData dataWithBytes:signkey length:32];
         }
         case ZegoAppTypeCustom:
