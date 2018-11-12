@@ -130,6 +130,12 @@ void ZegoMainDialog::on_m_bEnterRoom_clicked()
 		return;
 	}
 
+	if (roomID.size() > 20)
+	{
+		QMessageBox::warning(NULL, tr("警告"), tr("房间号过长，请重新输入"));
+		return;
+	}
+
 	QString strUserId = mConfig.GetUserId();
 	QString strUserName = mConfig.getUserName();
 

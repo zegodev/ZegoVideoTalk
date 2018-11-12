@@ -9,7 +9,7 @@ QZegoAVView::QZegoAVView(QWidget * parent) : QGraphicsView(parent)
     //setScene(scene);
 
 	m_nAVQuality = -1;
-	this->setUpdatesEnabled(false);
+	//this->setUpdatesEnabled(false);
 }
 
 QZegoAVView::~QZegoAVView()

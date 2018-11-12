@@ -45,6 +45,7 @@
 
         <activity
             android:name=".MainActivity"
+            android:launchMode="singleTop"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/vt_app_name">
             <intent-filter>

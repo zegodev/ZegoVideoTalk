@@ -96,7 +96,7 @@ public class VideoTalkActivity extends AppCompatActivity {
             loginRoom();
         }
 
-        ZegoAppHelper.getLiveRoom().setFrontCam(false);
+
         initPhoneCallingListener();
     }
 
@@ -214,7 +214,6 @@ public class VideoTalkActivity extends AppCompatActivity {
         mVideoLiveViewGrid.setLayoutManager(new GridLayoutManager(this, 4));
 
     }
-
 
 
     private void exchangeViewToFullScreen(int position) {
@@ -457,6 +456,7 @@ public class VideoTalkActivity extends AppCompatActivity {
                 case R.id.vt_btn_close: {
                     onBackPressed();
                 }
+                break;
 
                 case R.id.vt_btn_front_camera: {
                     if (isCamera) {
