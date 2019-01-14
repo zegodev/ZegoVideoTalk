@@ -1,4 +1,4 @@
-#include "ZegoDeviceManager.h"
+﻿#include "ZegoDeviceManager.h"
 #include "Signal/ZegoSDKSignal.h"
 #include "ZegoVideoTalkDemo.h"
 

@@ -1,4 +1,4 @@
-#ifndef ZEGOVideoCapture_h
+﻿#ifndef ZEGOVideoCapture_h
 #define ZEGOVideoCapture_h
 #include "video_format.h"
 namespace AVE {
