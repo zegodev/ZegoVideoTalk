@@ -3,7 +3,7 @@
 
 #include <QtWidgets/QDialog>
 #include <QShowEvent>
-#include "frameless_helper.h"
+#include "FramelessHelper.h"
 
 class ZegoDialog : public QDialog
 {

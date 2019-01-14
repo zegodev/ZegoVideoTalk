@@ -1,21 +1,10 @@
-#pragma once
-
-#ifndef FRAMELESS_HELPER_H
+﻿#ifndef FRAMELESS_HELPER_H
 #define FRAMELESS_HELPER_H
 
 #include <QObject>
-#include <QHash>
+
 class QWidget;
-class WidgetData;
-class FramelessHelperPrivate
-{
-public:
-	QHash<QWidget*, WidgetData*> m_widgetDataHash;
-	bool m_bWidgetMovable = false;
-	bool m_bWidgetResizable = false;
-	bool m_bRubberBandOnResize = false;
-	bool m_bRubberBandOnMove = false;
-};
+class FramelessHelperPrivate;
 
 class FramelessHelper : public QObject
 {
@@ -40,6 +29,8 @@ public:
     void setBorderWidth(uint width);
     // 设置标题栏高度
     void setTitleHeight(uint height);
+	// 设置标题是否需要双击最大化
+	void setTitleDoubleClick(QWidget *w, bool isDoubleClick);
 
     bool widgetResizable();
     bool widgetMovable();
@@ -48,6 +39,8 @@ public:
     uint borderWidth();
     uint titleHeight();
 
+    void setMax(QWidget *w,bool bMax);
+    bool isMax(QWidget *w);
 protected:
     // 事件过滤，进行移动、缩放等
     virtual bool eventFilter(QObject *obj, QEvent *event);
