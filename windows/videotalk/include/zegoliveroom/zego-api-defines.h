@@ -1,4 +1,4 @@
-//
+﻿//
 //  zego-api-defines.h
 //  zegoavkit
 //
