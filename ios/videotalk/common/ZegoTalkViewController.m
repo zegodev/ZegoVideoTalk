@@ -50,6 +50,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //开启监听设备旋转
+    if (![UIDevice currentDevice].generatesDeviceOrientationNotifications) {
+        [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    }
+    
+    //注意监听的是UIApplicationDidChangeStatusBarOrientationNotification而不是Device
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(handleOrientationChange:)
+                                                name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
+    
     ZegoTalkToolViewController *toolController = [[ZegoTalkToolViewController alloc] initWithNibName:@"ZegoTalkToolViewController" bundle:nil];
     [self displayToolViewController:toolController];
 
@@ -605,6 +614,13 @@
     }
     
     return nil;
+}
+
+
+#pragma mark - Orientation
+//设备方向改变的处理
+- (void)handleOrientationChange:(NSNotification *)notification{
+    [[ZegoManager api] setAppOrientation:[UIApplication sharedApplication].statusBarOrientation];
 }
 
 

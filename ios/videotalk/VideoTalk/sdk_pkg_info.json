@@ -12,8 +12,8 @@
   "sdk_name": "zegoliveroom_video_webrtc",
   "project": "videotalk",
   "platform": "apple",
-  "sdk_absolute_path_on_share": "smb://192.168.1.3/share/zego_sdk/zegoliveroom_release_new/zegoliveroom_181106_125049_release-new-0-gb5998cbf_video_bn958_12/iOS/zegoliveroom_181106_125049_release-new-0-gb5998cbf_video_bn958_12_ios.zip",
-  "sdk_absolute_path_on_share_static": "smb://192.168.1.3/share/zego_sdk/zegoliveroom_release_new/zegoliveroom_181106_125049_release-new-0-gb5998cbf_video_bn958_12/iOS/zegoliveroom_181106_125049_release-new-0-gb5998cbf_video_bn958_12_ios_static.zip",
+  "sdk_absolute_path_on_share": "smb://192.168.1.3/share/zego_sdk/zegoliveroom_release_new/zegoliveroom_181207_131537_release-new-0-g5180933c_video_bn1026_12/iOS/zegoliveroom_181207_131537_release-new-0-g5180933c_video_bn1026_12_ios.zip",
+  "sdk_absolute_path_on_share_static": "smb://192.168.1.3/share/zego_sdk/zegoliveroom_release_new/zegoliveroom_181207_131537_release-new-0-g5180933c_video_bn1026_12/iOS/zegoliveroom_181207_131537_release-new-0-g5180933c_video_bn1026_12_ios_static.zip",
   "copy_file_dirs_static": [
     {
       "src": "static/iphoneos_simulator",

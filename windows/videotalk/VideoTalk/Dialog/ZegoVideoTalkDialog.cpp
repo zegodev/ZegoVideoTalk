@@ -1,5 +1,7 @@
 ﻿#include "ZegoVideoTalkDialog.h"
 #include <QDebug>
+#include <QJsonObject>
+#include <QJsonDocument>
 #include "Base/ZegoVideoTalkDefines.h"
 
 ZegoVideoTalkDialog::ZegoVideoTalkDialog(RoomPtr chatRoom, QDialog *lastDialog, bool isVideoCustom, QWidget *parent)
@@ -657,6 +659,13 @@ void ZegoVideoTalkDialog::on_m_bProgMircoPhone_clicked()
 		m_device->SetMicEnabled(m_bCKEnableMic);
 	}
 
+	//发送流附加信息
+	QJsonObject extraInfo;
+	extraInfo.insert("enableMic", m_device->GetMicEnabled());
+	extraInfo.insert("enableCamera", m_device->GetCameraEnabled());
+	QString jsonString = QJsonDocument(extraInfo).toJson().simplified();
+	LIVEROOM::SetPublishStreamExtraInfo(qtoc(jsonString));
+
 }
 
 void ZegoVideoTalkDialog::on_m_bSpeaker_clicked()
@@ -700,6 +709,12 @@ void ZegoVideoTalkDialog::on_m_bCamera_clicked()
 
 	//允许使用摄像头
 	m_device->SetCameraEnabled(m_bCKEnableCamera);
+	//发送流附加信息
+	QJsonObject extraInfo;
+	extraInfo.insert("enableMic", m_device->GetMicEnabled());
+	extraInfo.insert("enableCamera", m_device->GetCameraEnabled());
+	QString jsonString = QJsonDocument(extraInfo).toJson().simplified();
+	LIVEROOM::SetPublishStreamExtraInfo(qtoc(jsonString));
 
 	update();
 }
@@ -785,6 +800,12 @@ void ZegoVideoTalkDialog::OnPublishStateUpdate(int stateCode, const QString& str
 	if (stateCode == 0)
 	{
 		
+		//发送流附加信息
+		QJsonObject extraInfo;
+		extraInfo.insert("enableMic", m_device->GetMicEnabled());
+		extraInfo.insert("enableCamera", m_device->GetCameraEnabled());
+		QString jsonString = QJsonDocument(extraInfo).toJson().simplified();
+		LIVEROOM::SetPublishStreamExtraInfo(qtoc(jsonString));
 		if (streamInfo != nullptr)
 		{
 

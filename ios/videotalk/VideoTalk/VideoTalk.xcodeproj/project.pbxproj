@@ -47,6 +47,7 @@
 		16B39E061FE7653E001B644C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16B39E051FE7653E001B644C /* SystemConfiguration.framework */; };
 		16B39E081FE7654F001B644C /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16B39E071FE7654F001B644C /* VideoToolbox.framework */; };
 		16B67EAE1FA2177000E365E3 /* ZegoTalkToolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16B67EB01FA2177000E365E3 /* ZegoTalkToolViewController.xib */; };
+		33E89C022189B4F900A65F2D /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33E89C012189B4F900A65F2D /* GLKit.framework */; };
 		A731AA622142463300661DB7 /* QRCodeReaderViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A731AA612142463300661DB7 /* QRCodeReaderViewController.framework */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +130,7 @@
 		16B67EAF1FA2177000E365E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ZegoTalkToolViewController.xib; sourceTree = "<group>"; };
 		16B67EB21FA2177400E365E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ZegoTalkToolViewController.strings; sourceTree = "<group>"; };
 		16B67EB41FA2177500E365E3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ZegoTalkToolViewController.strings"; sourceTree = "<group>"; };
+		33E89C012189B4F900A65F2D /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		A731AA612142463300661DB7 /* QRCodeReaderViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QRCodeReaderViewController.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33E89C022189B4F900A65F2D /* GLKit.framework in Frameworks */,
 				16B39E081FE7654F001B644C /* VideoToolbox.framework in Frameworks */,
 				16B39E061FE7653E001B644C /* SystemConfiguration.framework in Frameworks */,
 				164C75A0211853340012FB01 /* PgyUpdate.framework in Frameworks */,
@@ -177,6 +180,7 @@
 		161E2DCF1FE7648800C52B1B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				33E89C012189B4F900A65F2D /* GLKit.framework */,
 				16B39E071FE7654F001B644C /* VideoToolbox.framework */,
 				16B39E051FE7653E001B644C /* SystemConfiguration.framework */,
 				16B39E031FE76535001B644C /* Security.framework */,
@@ -385,7 +389,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = "/usr/bin/env python";
-			shellScript = "import os\nimport shutil\n\ncurrent_folder = os.getenv('PROJECT_DIR')\naction = os.getenv('ACTION')\nconfiguration = os.getenv('CONFIGURATION')\n\nif action == \"install\":\n    source_folder = \"iphoneos\"\nelse:\n    source_folder = \"iphoneos_simulator\"\n\nprint \"action: \" + action\n\nsource_framework_folder = os.path.join(current_folder, \"libs\", \"ZegoLiveRoom-all\", source_folder, \"ZegoLiveRoom.framework\")\ndest_framework_folder = os.path.join(current_folder, \"libs\", \"ZegoLiveRoom.framework\")\n\nif os.path.exists(dest_framework_folder):\n    shutil.rmtree(dest_framework_folder, ignore_errors=True)\n\nif os.path.exists(source_framework_folder):\n    shutil.copytree(source_framework_folder, dest_framework_folder)\n    log_name = os.path.join(current_folder, \"libs\", \"zegoliveroom.version.txt\")\n    with open(log_name, 'w') as f:\n        if action == \"install\":\n            f.write('iphoneos \\n')\n        else:\n            f.write('iphoneos & simulator \\n')\n        f.write(configuration)\n    f.close()";
+			shellScript = "import os\nimport shutil\n\ncurrent_folder = os.getenv('PROJECT_DIR')\naction = os.getenv('ACTION')\nconfiguration = os.getenv('CONFIGURATION')\n\nif action == \"install\":\n    source_folder = \"iphoneos\"\nelse:\n    source_folder = \"iphoneos_simulator\"\n\nprint \"action: \" + action\n\nsource_framework_folder = os.path.join(current_folder, \"libs\", \"ZegoLiveRoom-all\", source_folder, \"ZegoLiveRoom.framework\")\ndest_framework_folder = os.path.join(current_folder, \"libs\", \"ZegoLiveRoom.framework\")\n\nif os.path.exists(dest_framework_folder):\n    shutil.rmtree(dest_framework_folder, ignore_errors=True)\n\nif os.path.exists(source_framework_folder):\n    shutil.copytree(source_framework_folder, dest_framework_folder)\n    log_name = os.path.join(current_folder, \"libs\", \"zegoliveroom.version.txt\")\n    with open(log_name, 'w') as f:\n        if action == \"install\":\n            f.write('iphoneos \\n')\n        else:\n            f.write('iphoneos & simulator \\n')\n        f.write(configuration)\n    f.close()\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
