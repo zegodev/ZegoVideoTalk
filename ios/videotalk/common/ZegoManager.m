@@ -36,7 +36,7 @@ static ZegoLiveRoomApi *_apiInstance = nil;
         
         
         // 测试环境
-        [ZegoLiveRoomApi setUseTestEnv:[ZegoSetting sharedInstance].useTestEnv];
+        [ZegoLiveRoomApi setUseTestEnv:YES];
         
         // 调试信息
 #ifdef DEBUG
