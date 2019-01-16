@@ -279,7 +279,7 @@ public class PrefUtil {
     }
 
     public boolean getTestEncode() {
-        return mPref.getBoolean(KEY_TEST_ENCODE, false);
+        return mPref.getBoolean(KEY_TEST_ENCODE, true);
     }
 
     static private String VIDEO_CODEC = "VIDEO_CODEC";
