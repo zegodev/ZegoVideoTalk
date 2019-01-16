@@ -3,19 +3,30 @@ package com.zego.videotalk.adapter;
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.ArrayMap;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.GridView;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.zego.videotalk.R;
 import com.zego.videotalk.ZegoAppHelper;
 import com.zego.videotalk.ui.widgets.VideoLiveView;
 import com.zego.videotalk.utils.PrefUtil;
+import com.zego.zegoliveroom.ZegoLiveRoom;
 import com.zego.zegoliveroom.constants.ZegoVideoViewMode;
 import com.zego.zegoliveroom.entity.ZegoStreamInfo;
+import com.zego.zegoliveroom.entity.ZegoStreamQuality;
 
 import java.lang.ref.SoftReference;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -28,7 +39,7 @@ public class VideoLiveViewAdapter extends RecyclerView.Adapter {
 
     private SoftReference<Activity> mParentReference;
     private ArrayList<ZegoStreamInfo> mStreamList;
-    private Map<String, CommonStreamQuality> mQualityMap;
+    private Map<String, ZegoStreamQuality> mQualityMap;
     private int mItemWidth = 0;
     private OnItemClickListener onItemClickListener;
 
@@ -50,7 +61,7 @@ public class VideoLiveViewAdapter extends RecyclerView.Adapter {
         }
     }
 
-    public synchronized void put(String key, CommonStreamQuality value) {
+    public synchronized void put(String key, ZegoStreamQuality value) {
         if (mQualityMap != null) {
             mQualityMap.put(key, value);
         }
@@ -99,10 +110,10 @@ public class VideoLiveViewAdapter extends RecyclerView.Adapter {
         });
 
         zegoMapView.put(streamInfo.streamID, liveView.getTextureView().getId());
-        CommonStreamQuality commonStreamQuality = mQualityMap.get(streamInfo.streamID);
-        if (commonStreamQuality != null) {
+        ZegoStreamQuality zegoStreamQuality = mQualityMap.get(streamInfo.streamID);
+        if (zegoStreamQuality != null) {
 
-            liveView.setLiveQuality(commonStreamQuality.quality, commonStreamQuality.videoFps, commonStreamQuality.vkbps, commonStreamQuality.rtt, commonStreamQuality.pktLostRate);
+            liveView.setLiveQuality(zegoStreamQuality.quality, zegoStreamQuality.videoFPS, zegoStreamQuality.videoBitrate, zegoStreamQuality.rtt, zegoStreamQuality.pktLostRate);
 
         }
 
@@ -217,19 +228,8 @@ public class VideoLiveViewAdapter extends RecyclerView.Adapter {
         });
     }
 
-    public synchronized void onPlayQualityUpdate(String streamId, final CommonStreamQuality commonStreamQuality) {
-        put(streamId, commonStreamQuality);
+    public synchronized void onPlayQualityUpdate(String streamId, final ZegoStreamQuality zegoStreamQuality) {
+        put(streamId, zegoStreamQuality);
         notifyRefreshUI();
-    }
-
-    public static class CommonStreamQuality {
-        public double audioFps;
-        public double videoFps;
-        public double vkbps;
-        public int rtt;
-        public int pktLostRate;
-        public int quality;
-        public int width;
-        public int height;
     }
 }

@@ -1,6 +1,5 @@
 package com.zego.videotalk.ui.activities;
 
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Service;
 import android.content.DialogInterface;
@@ -20,7 +19,9 @@ import android.util.Log;
 import android.view.Surface;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -30,7 +31,6 @@ import com.zego.videotalk.ZegoAppHelper;
 import com.zego.videotalk.adapter.VideoLiveViewAdapter;
 import com.zego.videotalk.ui.widgets.VideoLiveView;
 import com.zego.videotalk.utils.AppLogger;
-import com.zego.videotalk.utils.EntityConversion;
 import com.zego.videotalk.utils.PrefUtil;
 import com.zego.videotalk.utils.SystemUtil;
 import com.zego.videotalk.utils.TimeUtil;
@@ -43,9 +43,8 @@ import com.zego.zegoliveroom.constants.ZegoAvConfig;
 import com.zego.zegoliveroom.constants.ZegoConstants;
 import com.zego.zegoliveroom.constants.ZegoVideoViewMode;
 import com.zego.zegoliveroom.entity.AuxData;
-import com.zego.zegoliveroom.entity.ZegoPlayStreamQuality;
-import com.zego.zegoliveroom.entity.ZegoPublishStreamQuality;
 import com.zego.zegoliveroom.entity.ZegoStreamInfo;
+import com.zego.zegoliveroom.entity.ZegoStreamQuality;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -575,18 +574,14 @@ public class VideoTalkActivity extends AppCompatActivity {
         /**
          * 拉流质量更新
          */
-        @SuppressLint("StringFormatMatches")
         @Override
-        public void onPlayQualityUpdate(String streamId, ZegoPlayStreamQuality zegoPlayStreamQuality) {
-
-            VideoLiveViewAdapter.CommonStreamQuality commonStreamQuality = EntityConversion.playQualityToCommonStreamQuality(zegoPlayStreamQuality);
-
+        public void onPlayQualityUpdate(String streamId, ZegoStreamQuality zegoStreamQuality) {
             //TODO
-            videoLiveViewAdapter.onPlayQualityUpdate(streamId, commonStreamQuality);
+            videoLiveViewAdapter.onPlayQualityUpdate(streamId, zegoStreamQuality);
             if (streamId != null && streamId.equals(mBigVideoLiveView.getStreamID())) {
-                mBigVideoLiveView.setLiveQuality(zegoPlayStreamQuality.quality, commonStreamQuality.videoFps, commonStreamQuality.vkbps, commonStreamQuality.rtt, commonStreamQuality.pktLostRate);
+                mBigVideoLiveView.setLiveQuality(zegoStreamQuality.quality, zegoStreamQuality.videoFPS, zegoStreamQuality.videoBitrate, zegoStreamQuality.rtt, zegoStreamQuality.pktLostRate);
             }
-            Log.e("setLiveQuality", getString(R.string.vt_live_quality_fps_and_bitrate, commonStreamQuality.videoFps, commonStreamQuality.vkbps, commonStreamQuality.rtt, commonStreamQuality.pktLostRate));
+            Log.e("setLiveQuality", getString(R.string.vt_live_quality_fps_and_bitrate, zegoStreamQuality.videoFPS, zegoStreamQuality.videoBitrate, zegoStreamQuality.rtt, zegoStreamQuality.pktLostRate));
 
         }
 
@@ -635,19 +630,17 @@ public class VideoTalkActivity extends AppCompatActivity {
         /**
          * 推流质量更新
          */
-        @SuppressLint("StringFormatMatches")
         @Override
-        public void onPublishQualityUpdate(String streamID, ZegoPublishStreamQuality streamQuality) {
+        public void onPublishQualityUpdate(String streamId, ZegoStreamQuality zegoStreamQuality) {
+            //TODO
 
-            VideoLiveViewAdapter.CommonStreamQuality commonStreamQuality = EntityConversion.publishQualityToCommonStreamQuality(streamQuality);
-            if (streamID != null) {
-                videoLiveViewAdapter.onPlayQualityUpdate(streamID, commonStreamQuality);
-
-                if (streamID.equals(mBigVideoLiveView.getStreamID())) {
-                    mBigVideoLiveView.setLiveQuality(commonStreamQuality.quality, commonStreamQuality.videoFps, commonStreamQuality.vkbps, commonStreamQuality.rtt, commonStreamQuality.pktLostRate);
+            if (streamId != null) {
+                videoLiveViewAdapter.onPlayQualityUpdate(streamId, zegoStreamQuality);
+                if (streamId.equals(mBigVideoLiveView.getStreamID())) {
+                    mBigVideoLiveView.setLiveQuality(zegoStreamQuality.quality, zegoStreamQuality.videoFPS, zegoStreamQuality.videoBitrate, zegoStreamQuality.rtt, zegoStreamQuality.pktLostRate);
                 }
             }
-            Log.e("PublishSetLiveQuality", getString(R.string.vt_live_quality_fps_and_bitrate, commonStreamQuality.videoFps, commonStreamQuality.vkbps, commonStreamQuality.rtt, commonStreamQuality.pktLostRate));
+            Log.e("PublishSetLiveQuality", getString(R.string.vt_live_quality_fps_and_bitrate, zegoStreamQuality.videoFPS, zegoStreamQuality.videoBitrate, zegoStreamQuality.rtt, zegoStreamQuality.pktLostRate));
 
         }
 

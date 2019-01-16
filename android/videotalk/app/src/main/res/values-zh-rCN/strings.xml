@@ -19,7 +19,7 @@
     <string name="vt_btn_fullscreen">全屏</string>
     <string name="vt_btn_exit_fullscreen">退出全屏</string>
     <string name="vt_live_quality">当前质量:&#160;<xliff:g id="value">%1$s</xliff:g></string>
-    <string name="vt_live_quality_fps_and_bitrate">&#160;帧率:<xliff:g id="fps"> </xliff:g>;&#160;比特率:<xliff:g id="bitrate">%2$.2f</xliff:g>Kb/s;&#160;延时:<xliff:g id="rtt">%3$s</xliff:g>ms;&#160;丢包率:<xliff:g id="pktlostrate">%4$s</xliff:g>%%</string>
+    <string name="vt_live_quality_fps_and_bitrate">&#160;帧率:<xliff:g id="fps">%1$.2f</xliff:g>;&#160;比特率:<xliff:g id="bitrate">%2$.2f</xliff:g>Kb/s;&#160;延时:<xliff:g id="rtt">%3$s</xliff:g>ms;&#160;丢包率:<xliff:g id="pktlostrate">%4$s</xliff:g>%%</string>
     <string name="vt_hint_none_data">无数据</string>
 
     <string name="zg_scan_qr_code">扫描二维码</string>
