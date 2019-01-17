@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.pgyersdk.update.PgyUpdateManager;
 import com.zego.videotalk.ui.activities.SettingsActivity;
 import com.zego.videotalk.ui.activities.VideoTalkActivity;
+import com.zego.videotalk.utils.SystemUtil;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        if (checkOrRequestPermission(1002)) {
+        if (checkOrRequestPermission(1002) && !SystemUtil.isDebugVersion(this)) {
 
             /** 可选配置集成方式 **/
             new PgyUpdateManager.Builder()

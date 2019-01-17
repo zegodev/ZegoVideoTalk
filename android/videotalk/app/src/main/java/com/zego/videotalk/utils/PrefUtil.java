@@ -51,7 +51,7 @@ public class PrefUtil {
     private SharedPreferences mPref;
 
     private PrefUtil() {
-        mPref = VideoTalkApplication.getAppContext().getSharedPreferences("__global_pref_v2", Context.MODE_PRIVATE);
+        mPref = VideoTalkApplication.getAppContext().getSharedPreferences("__global_pref_v3", Context.MODE_PRIVATE);
     }
 
     static public PrefUtil getInstance() {

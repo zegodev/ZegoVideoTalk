@@ -1,6 +1,7 @@
 package com.zego.videotalk.utils;
 
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -40,6 +41,16 @@ public class SystemUtil {
         String finalInfo = oriInfo.toString().replaceAll(",", ".");
 
         return finalInfo;
+    }
+
+    public static boolean isDebugVersion(Context context) {
+        try {
+            ApplicationInfo info = context.getApplicationInfo();
+            return (info.flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     /**

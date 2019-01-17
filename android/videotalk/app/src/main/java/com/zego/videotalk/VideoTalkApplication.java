@@ -79,7 +79,7 @@ public class VideoTalkApplication extends Application {
 
         ZegoLiveRoom liveRoom = ZegoAppHelper.getLiveRoom();
 
-        liveRoom.setSDKContext(new ZegoLiveRoom.SDKContext() {
+        ZegoLiveRoom.setSDKContext(new ZegoLiveRoom.SDKContext() {
             @Override
             public String getSoFullPath() {
                 return null;
