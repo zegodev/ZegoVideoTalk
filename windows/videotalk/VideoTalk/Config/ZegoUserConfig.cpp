@@ -34,8 +34,7 @@ void QZegoUserConfig::LoadConfig(void)
 	m_strUserName = QStringLiteral("mac-vt-") + m_strUserId;
 #endif
 
-	//默认为测试环境以防用户用自己的APPID的时候无法登录房间
-	m_isUseTestEnv = true;
+	m_isUseTestEnv = false;
 
 	m_appVersion.m_versionMode = ZEGO_PROTOCOL_UDP;
 	m_appVersion.m_strAppID = 0;

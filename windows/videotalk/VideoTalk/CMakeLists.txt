@@ -7,7 +7,15 @@ project(VideoTalk)
 #set(CMAKE_SKIP_BUILD_RPATH TRUE)                 # 编译时加上RPATH  
 #set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
 
-SET(CMAKE_PREFIX_PATH $ENV{QT_DIR})
+#注意：执行该Cmake之前，需要先在系统环境变量中设置好Qt路径。
+#例如： 32位Qt的Key是QT_DIR， value是C:\Qt\Qt5.7.1\5.7\msvc2013（以Qt5.7.1为例）
+#其他环境以此类推
+
+if(WINDOWS_PLATFORM STREQUAL "x86")
+    SET(CMAKE_PREFIX_PATH $ENV{QT_DIR})
+elseif(WINDOWS_PLATFORM STREQUAL "x64")
+    SET(CMAKE_PREFIX_PATH $ENV{QT_DIR_x64})
+endif()
 
 #添加qt库
 find_package(Qt5Core REQUIRED)
@@ -59,10 +67,10 @@ if(WIN32)
 	set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /Zi")
 	set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} /DEBUG /OPT:REF /OPT:ICF")
 	set(LINK_LIBRARY zegoliveroom.lib)
-	set(ZEGOLIVEROOM_PATH ${CMAKE_CURRENT_LIST_DIR}/../libs/windows/x86_xp/$(Configuration)/zegoliveroom.dll)
+	set(ZEGOLIVEROOM_PATH ${CMAKE_CURRENT_LIST_DIR}/../libs/windows/${WINDOWS_PLATFORM}/$(Configuration)/zegoliveroom.dll)
     set(MSVC_PATH ${CMAKE_CURRENT_LIST_DIR}/msvc/${WINDOWS_PLATFORM})
 	add_definitions(-DUNICODE -D_UNICODE -D_SCL_SECURE_NO_WARNINGS -DWIN32 -DV_LOG -DCURL_STATICLIB)
-	link_directories(${CMAKE_CURRENT_LIST_DIR}/../libs/windows/x86_xp)
+	link_directories(${CMAKE_CURRENT_LIST_DIR}/../libs/windows/${WINDOWS_PLATFORM})
 
 elseif(APPLE)
     SET(BUILD_WITH_INSTALL_RPATH TRUE)
