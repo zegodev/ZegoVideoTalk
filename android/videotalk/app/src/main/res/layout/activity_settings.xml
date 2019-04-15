@@ -5,14 +5,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.zego.videotalk.ui.activities.SettingsActivity">
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
 
     <ScrollView
         android:id="@+id/vt_setting_panel"
@@ -48,15 +49,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="@string/zg_scan_qr_code_setting"
                         android:textSize="@dimen/text_size_7"
-                        android:textStyle="bold"
-                        android:text="@string/zg_scan_qr_code_setting" />
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/zg_scan_qr_code_setting_text"
-                        />
+                        android:text="@string/zg_scan_qr_code_setting_text" />
 
                 </LinearLayout>
 
@@ -277,7 +277,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
-                    android:text="@string/zg_checkbox_use_hardware_encode" />
+                    android:text="@string/hardware_encode" />
 
                 <CheckBox
                     android:id="@+id/zg_checkbox_user_hardware_encode"
@@ -298,7 +298,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
-                    android:text="@string/zg_checkbox_use_hardware_decode" />
+                    android:text="@string/hardware_decode" />
 
                 <CheckBox
                     android:id="@+id/zg_checkbox_hardware_decode"

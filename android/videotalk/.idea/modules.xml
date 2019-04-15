@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/VideoTalk_180907_104514_release_new-0-ga48958e_bn177_udp.iml" filepath="$PROJECT_DIR$/VideoTalk_180907_104514_release_new-0-ga48958e_bn177_udp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/videotalk.iml" filepath="$PROJECT_DIR$/videotalk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/videotalk.iml" filepath="$PROJECT_DIR$/videotalk.iml" />
     </modules>
   </component>
 </project>

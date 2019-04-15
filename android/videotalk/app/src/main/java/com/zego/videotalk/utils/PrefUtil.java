@@ -224,7 +224,7 @@ public class PrefUtil {
     }
 
     public boolean getHardwareEncode() {
-        return mPref.getBoolean(KEY_HARDWARE_ENCODE, true);
+        return mPref.getBoolean(KEY_HARDWARE_ENCODE, false);
     }
 
     public void setHardwareDecode(boolean value) {
@@ -232,7 +232,7 @@ public class PrefUtil {
     }
 
     public boolean getHardwareDecode() {
-        return mPref.getBoolean(KEY_HARDWARE_DECODE, true);
+        return mPref.getBoolean(KEY_HARDWARE_DECODE, false);
     }
 
     public Object getLogData() {
@@ -279,7 +279,7 @@ public class PrefUtil {
     }
 
     public boolean getTestEncode() {
-        return mPref.getBoolean(KEY_TEST_ENCODE, true);
+        return mPref.getBoolean(KEY_TEST_ENCODE, false);
     }
 
     static private String VIDEO_CODEC = "VIDEO_CODEC";

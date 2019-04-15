@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 26
 
     defaultConfig {
         applicationId "com.zego.videotalk"
         minSdkVersion 15
-        targetSdkVersion 22
+        targetSdkVersion 26
         versionCode 1
         versionName getDemoVersionName()
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

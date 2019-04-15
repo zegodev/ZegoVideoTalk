@@ -62,9 +62,6 @@
     <string name="zg_text_resolution_type_Highest">Highest</string>
     <string name="zg_text_resolution_type_Customize">Customize</string>
 
-    <string name="zg_checkbox_use_hardware_encode">Hardware Encode</string>
-    <string name="zg_checkbox_use_hardware_decode">Hardware Decode</string>
-
     <string name="resolution_prefix">Resolution&#160;<xliff:g id="value">%1$s</xliff:g></string>
     <string name="fps_prefix">Frame Rate&#160;<xliff:g id="value">%1$s</xliff:g></string>
     <string name="bitrate_prefix">Bit Rate&#160;<xliff:g id="value">%1$s</xliff:g></string>
@@ -81,6 +78,14 @@
     <string name="log">log</string>
     <string name="back">back</string>
     <string name="share">share</string>
+
+    <string name="hardware_encode">Hardware Encode</string>
+    <string name="hardware_decode">Hardware Decode</string>
+    <string name="software_encode">Software Encode</string>
+    <string name="software_decode">Software Decode</string>
+
+    <string name="tips_auto_open_hardware_codec">1080P resolution has opened the hardware codec, can be manually closed !</string>
+
 
     <item name="view_video" type="id"></item>
 

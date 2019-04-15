@@ -62,9 +62,6 @@
     <string name="zg_text_resolution_type_Highest">特高质量</string>
     <string name="zg_text_resolution_type_Customize">自定义</string>
 
-    <string name="zg_checkbox_use_hardware_encode">硬件编码</string>
-    <string name="zg_checkbox_use_hardware_decode">硬件解码</string>
-
     <string name="resolution_prefix">分辨率&#160;<xliff:g id="value">%1$s</xliff:g></string>
     <string name="fps_prefix">帧率&#160;<xliff:g id="value">%1$s</xliff:g></string>
     <string name="bitrate_prefix">码率&#160;<xliff:g id="value">%1$s</xliff:g></string>
@@ -80,4 +77,11 @@
     <string name="back">返回</string>
     <string name="log">日志</string>
     <string name="share">分享</string>
+
+    <string name="hardware_encode">硬件编码</string>
+    <string name="hardware_decode">硬件解码</string>
+    <string name="software_encode">软件编码</string>
+    <string name="software_decode">软件解码</string>
+
+    <string name="tips_auto_open_hardware_codec">1080P 分辨率已打开硬件编解码, 可手动关闭!</string>
 </resources>

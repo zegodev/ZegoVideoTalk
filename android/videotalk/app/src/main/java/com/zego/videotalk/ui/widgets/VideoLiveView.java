@@ -5,11 +5,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.os.HandlerThread;
-import android.os.Looper;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Surface;
 import android.view.TextureView;
@@ -20,8 +17,6 @@ import android.widget.TextView;
 import com.zego.videotalk.R;
 import com.zego.zegoliveroom.ZegoLiveRoom;
 import com.zego.zegoliveroom.constants.ZegoVideoViewMode;
-
-import java.util.logging.Handler;
 
 
 /**
@@ -49,6 +44,16 @@ public class VideoLiveView extends RelativeLayout {
      * 分享.
      */
     private TextView mTvShare;
+
+    /**
+     * 编码方式
+     */
+    private TextView mTvEncoder;
+
+    /**
+     * 解码方式
+     */
+    private TextView mTvDecoder;
 
     /**
      * 用于渲染视频.
@@ -142,6 +147,10 @@ public class VideoLiveView extends RelativeLayout {
             if (mIsBigView) {
                 mRootView = LayoutInflater.from(context).inflate(R.layout.vt_widget_live_view_big, this);
 
+                // 初始化编码解码TextView
+                mTvEncoder = mRootView.findViewById(R.id.tv_encoder);
+                mTvDecoder = mRootView.findViewById(R.id.tv_decoder);
+
                 mTvSwitchToFullScreen = (TextView) mRootView.findViewById(R.id.tv_switch_full_screen);
                 mTvSwitchToFullScreen.setOnClickListener(new OnClickListener() {
                     @Override
@@ -205,6 +214,26 @@ public class VideoLiveView extends RelativeLayout {
     public void setLiveQuality(int quality, double videoFPS, double videoBitrate, int videoRtt, int videoPktLostRate) {
         setLiveQuality(quality);
         mTvQuality.setText(mResources.getString(R.string.vt_live_quality_fps_and_bitrate, videoFPS, videoBitrate, videoRtt, videoPktLostRate));
+    }
+
+    /**
+     * 设置当前的编码形式
+     * @param isHardware 是否硬件编码
+     */
+    public void setEncoderFormat(boolean isHardware) {
+        if (mIsBigView) {
+            mTvEncoder.setText(isHardware ? R.string.hardware_encode : R.string.software_encode);
+        }
+    }
+
+    /**
+     * 设置当前的解码形式
+     * @param isHardware 是否硬件解码
+     */
+    public void setDecoderFormat(boolean isHardware) {
+        if (mIsBigView) {
+            mTvDecoder.setText(isHardware ? R.string.hardware_decode : R.string.software_decode);
+        }
     }
 
 

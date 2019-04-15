@@ -309,7 +309,8 @@ public class SettingsActivity extends AppCompatActivity {
         int defaultLevel = PrefUtil.getInstance().getLiveQuality();
 
         mLiveQualityView = (Spinner) findViewById(R.id.sp_resolutions);
-        mLiveQualityView.setSelection(defaultLevel);
+        mLiveQualityView.setSelection(defaultLevel, false);
+
         mLiveQualityView.setOnItemSelectedListener(mItemSelectedListener);
         mResolutionDescView = (TextView) findViewById(R.id.tv_resolution);
         mResolutionView = (CustomSeekBar) findViewById(R.id.sb_resolution);
@@ -352,6 +353,16 @@ public class SettingsActivity extends AppCompatActivity {
         tvDemoVersion = (TextView) findViewById(R.id.tv_demo_version);
         tvDemoVersion.setText(SystemUtil.getAppVersionName(this));
 
+        if (defaultLevel == 6) {
+            mResolutionView.setEnabled(true);
+            mFPSView.setEnabled(true);
+            mBitrateView.setEnabled(true);
+        } else {
+            mResolutionView.setEnabled(false);
+            mFPSView.setEnabled(false);
+            mBitrateView.setEnabled(false);
+        }
+
         TextView sdkVersionView = (TextView) findViewById(R.id.tv_version);
         sdkVersionView.setText(liveRoom.version());
 
@@ -392,13 +403,16 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     private void changeResolution(int index) {
+
         if (index < ZegoAvConfig.VIDEO_BITRATES.length) {
             int level = index;
             mResolutionView.setProgress(level);
             // 预设级别中,帧率固定为"15"
             mFPSView.setProgress(15);
             mBitrateView.setProgress(ZegoAvConfig.VIDEO_BITRATES[level]);
-
+            if (level == 5) {
+                enableHardwareCodec();
+            }
             mResolutionView.setEnabled(false);
             mFPSView.setEnabled(false);
             mBitrateView.setEnabled(false);
@@ -406,6 +420,18 @@ public class SettingsActivity extends AppCompatActivity {
             mResolutionView.setEnabled(true);
             mFPSView.setEnabled(true);
             mBitrateView.setEnabled(true);
+        }
+    }
+
+    private void enableHardwareCodec(){
+        if (!mHardwareDecodeView.isChecked() || !mHardwareEncodeView.isChecked()) {
+            mHardwareEncodeView.setChecked(true);
+            mHardwareDecodeView.setChecked(true);
+            Toast.makeText(this, getString(R.string.tips_auto_open_hardware_codec), Toast.LENGTH_LONG).show();
+
+            PrefUtil.getInstance().setHardwareEncode(true);
+
+            PrefUtil.getInstance().setHardwareDecode(true);
         }
     }
 
@@ -457,6 +483,9 @@ public class SettingsActivity extends AppCompatActivity {
             switch (seekBar.getId()) {
                 case R.id.sb_resolution:
                     mResolutionDescView.setText(getString(R.string.resolution_prefix, mResolutionText[progress]));
+                    if (seekBar.isPressed() && progress == 5) {
+                        enableHardwareCodec();
+                    }
                     break;
 
                 case R.id.sb_fps:
