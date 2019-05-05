@@ -71,9 +71,9 @@ public class VideoTalkActivity extends AppCompatActivity {
 
         int orientation = getIntent().getIntExtra("orientation", 0);
         if (orientation == Surface.ROTATION_0 || orientation == Surface.ROTATION_180) {
-            setRequestedOrientation(orientation == Surface.ROTATION_0 ? ActivityInfo.SCREEN_ORIENTATION_PORTRAIT : ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
+            setRequestedOrientation(orientation == Surface.ROTATION_0 ? ActivityInfo.SCREEN_ORIENTATION_PORTRAIT : ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT);
         } else {
-            setRequestedOrientation(orientation == Surface.ROTATION_90 ? ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE : ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
+            setRequestedOrientation(orientation == Surface.ROTATION_90 ? ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE : ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE);
         }
         // 获取屏幕比例
         boolean proportion = SystemUtil.getResolutionProportion(this);
@@ -87,6 +87,7 @@ public class VideoTalkActivity extends AppCompatActivity {
             config.setVideoCaptureResolution(width, height);
             ZegoAppHelper.getLiveRoom().setAVConfig(config);
         }
+
         initCtrls();
 
         if (savedInstanceState != null) {
@@ -99,8 +100,15 @@ public class VideoTalkActivity extends AppCompatActivity {
 
 
         initPhoneCallingListener();
+
+
     }
 
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 
     protected PhoneStateListener mPhoneStateListener = null;
     protected boolean mHostHasBeenCalled = false;
@@ -264,7 +272,7 @@ public class VideoTalkActivity extends AppCompatActivity {
     private void loginRoom() {
         String sessionId = getIntent().getStringExtra("sessionId");
         String roomName = String.format("From_%s", PrefUtil.getInstance().getUserName());
-        boolean success = ZegoAppHelper.getLiveRoom().loginRoom(sessionId, roomName, ZegoConstants.RoomRole.Audience, new ZegoLgoinCompleteCallback());
+        boolean success = ZegoAppHelper.getLiveRoom().loginRoom(sessionId, roomName, ZegoConstants.RoomRole.Audience, new ZegoLoginCompleteCallback());
         if (success) {
             mIsLoginRoom = true;
             startPreview();
@@ -475,7 +483,7 @@ public class VideoTalkActivity extends AppCompatActivity {
         }
     }
 
-    private class ZegoLgoinCompleteCallback implements IZegoLoginCompletionCallback {
+    private class ZegoLoginCompleteCallback implements IZegoLoginCompletionCallback {
         @Override
         public void onLoginCompletion(int errorCode, ZegoStreamInfo[] streamList) {
             mIsLoginRoom = false;

@@ -45,9 +45,9 @@
 
         <activity
             android:name=".MainActivity"
-            android:launchMode="singleTop"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/vt_app_name">
+            android:label="@string/vt_app_name"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -62,6 +62,7 @@
             android:label="@string/vt_title_activity_log" />
         <activity
             android:name=".ui.activities.VideoTalkActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/vt_title_activity_talk" />
         <activity
             android:name=".ui.activities.ZegoLogShareActivity"
