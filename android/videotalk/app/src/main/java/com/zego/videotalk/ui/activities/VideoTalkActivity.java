@@ -87,7 +87,6 @@ public class VideoTalkActivity extends AppCompatActivity {
             config.setVideoCaptureResolution(width, height);
             ZegoAppHelper.getLiveRoom().setAVConfig(config);
         }
-
         initCtrls();
 
         if (savedInstanceState != null) {
@@ -100,15 +99,8 @@ public class VideoTalkActivity extends AppCompatActivity {
 
 
         initPhoneCallingListener();
-
-
     }
 
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
 
     protected PhoneStateListener mPhoneStateListener = null;
     protected boolean mHostHasBeenCalled = false;
@@ -272,7 +264,7 @@ public class VideoTalkActivity extends AppCompatActivity {
     private void loginRoom() {
         String sessionId = getIntent().getStringExtra("sessionId");
         String roomName = String.format("From_%s", PrefUtil.getInstance().getUserName());
-        boolean success = ZegoAppHelper.getLiveRoom().loginRoom(sessionId, roomName, ZegoConstants.RoomRole.Audience, new ZegoLoginCompleteCallback());
+        boolean success = ZegoAppHelper.getLiveRoom().loginRoom(sessionId, roomName, ZegoConstants.RoomRole.Audience, new ZegoLgoinCompleteCallback());
         if (success) {
             mIsLoginRoom = true;
             startPreview();
@@ -483,7 +475,7 @@ public class VideoTalkActivity extends AppCompatActivity {
         }
     }
 
-    private class ZegoLoginCompleteCallback implements IZegoLoginCompletionCallback {
+    private class ZegoLgoinCompleteCallback implements IZegoLoginCompletionCallback {
         @Override
         public void onLoginCompletion(int errorCode, ZegoStreamInfo[] streamList) {
             mIsLoginRoom = false;
